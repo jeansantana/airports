@@ -1,15 +1,14 @@
 package teste;
 
+import static org.junit.Assert.*;
+
 import org.junit.Before;
 import org.junit.Test;
 
-import junit.framework.TestCase;
-
-public class TesteSetCollection extends TestCase {
+public class TesteSetCollection {
 
 	@Before
-	protected void setUp() throws Exception {
-		
+	public void setUp() throws Exception {
 	}
 
 	@Test

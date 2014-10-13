@@ -57,7 +57,7 @@ public class Main {
 			g.adicionarVertice(c5);
 			g.adicionarVertice(c3);
 		} catch (Exception e) {
-			System.out.println(e);
+			System.err.println(e);
 		}
 		
 		try {
@@ -71,7 +71,7 @@ public class Main {
 			g.adicionarAresta(e3);
 			g.adicionarAresta(new Estrada(8, new Cidade(6, "Bogotá"), c1, 45));
 		} catch (Exception e) {
-			System.out.println(e);
+			System.err.println(e);
 		}
 		
 		int P = 100;
