@@ -287,6 +287,10 @@ public class GrafoLista < V extends Vertice, A extends Aresta <V> > implements G
 		
 	}
 	
+	/**
+	 * retorna o custo da obra, essa função é uma adaptação do algoritmo 
+	 * de Kruskal de Àrvore Geradora Mínima
+	 */
 	public int kruskalAirs(int P) {
 		
 		Aresta[] ls = getArestasInVectorPreprocessor(P);

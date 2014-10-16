@@ -148,7 +148,7 @@ public class SetCollectionTest {
 		}
 	}
 
-	/*
+	/**
 	 * Unindo elementos e testando se forma ciclo
 	 */
 
@@ -167,7 +167,7 @@ public class SetCollectionTest {
 	 * Teste do método GetNumComponennntesConexas
 	 * *********************************************/
 
-	/*
+	/**
 	 * Teste default, onde o número de elementos deve ser o mesmo que o número
 	 * de componentes
 	 */
@@ -179,7 +179,7 @@ public class SetCollectionTest {
 
 	}
 	
-	/*
+	/**
 	 * Teste com uniões
 	 * */
 	@Test
