@@ -12,7 +12,7 @@ public class SetCollection {
 	//construtor é a operação de gerar
 	public SetCollection(int n) {
 		
-		Pai = new int[n];
+		Pai = new int[n]; 
 		
 		for (int i = 0; i < Pai.length; i++) {
 			Pai[i] = i;

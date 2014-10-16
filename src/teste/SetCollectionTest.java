@@ -12,27 +12,36 @@ public class SetCollectionTest {
 	public SetCollection setCollection;
 	public int n = 50;
 
-	@Before
-	public void setUp() throws Exception {
-		setCollection = new SetCollection(n);
-	}
 
 	/*************************************
 	 * Teste do Construtor SetCollection
 	 * ***********************************/
+	
+	/**Válidos**/
+	
 	/* Testando se o vetor criado pelo construtor tem o tamanho n */
 	@Test
 	public void testSetCollection() {
+		setCollection = new SetCollection(n);
 		assertEquals(setCollection.getPai().length, n);
 	}
 
 	/* Testando se o vetor foi inicializado corretamente */
 	@Test
 	public void test2SetCollection() {
-
+		setCollection = new SetCollection(n);
 		for (int i = 0; i < setCollection.getPai().length; i++) {
 			assertEquals(setCollection.getPai()[i], i);
 		}
+	}
+	
+
+	/**Inválidos**/
+	
+	/*Teste de tamanho negativo*/
+	@Test
+	public void test3SetCollection() {
+		setCollection = new SetCollection(-1);
 	}
 
 	/*********************************************
@@ -61,7 +70,7 @@ public class SetCollectionTest {
 			setCollection = new SetCollection(n);
 
 			for (int i = 0; i < setCollection.getPai().length; i++) {
-				setCollection.unir(i, 0);
+				setCollection.unir(i, j);
 			}
 
 			for (int i = 0; i < setCollection.getPai().length; i++) {
@@ -70,6 +79,17 @@ public class SetCollectionTest {
 
 		}
 
+	}
+	
+	/**Inválidos**/
+	
+	/*Busca de números fora do intervalo*/
+	@Test
+	public void test3Busca() {
+		setCollection = new SetCollection(n);
+		
+		
+		assertEquals(setCollection.busca(n),n);
 	}
 
 	/**************************************
@@ -93,21 +113,21 @@ public class SetCollectionTest {
 		}
 	}
 
+	/**Inválidos**/
 	/*
 	 * Teste para entrada inválida
 	 */
-	@Test
+	@Test (expected = Exception.class)
 	public void test2Unir() {
 
-		try {
+
 			setCollection = new SetCollection(n);
 			setCollection.unir(-1, n);
 			assertNotEquals(setCollection.busca(-1), setCollection.busca(n));
-		} catch (Exception e) {
-			assertTrue(true);
-		}
+		
 
 	}
+	
 
 	/***********************************
 	 * Teste do método FormaCiclo
@@ -171,18 +191,6 @@ public class SetCollectionTest {
 			assertEquals(setCollection.getNumComponentesConexas(), n-i);
 		}
 		
-	}
-
-	/********************
-	 * Teste método getPai
-	 * ******************/
-	/* Teste trivial */
-	@Test
-	public void testGetPai() {
-		setCollection = new SetCollection(n);
-
-		assertEquals(setCollection.getPai().length, n);
-
 	}
 
 }
